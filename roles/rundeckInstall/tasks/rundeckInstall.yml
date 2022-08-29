@@ -1,0 +1,21 @@
+---
+
+ - name: Install Dependencies
+   yum:
+     name: "{{ packages }}"
+   vars:
+     packages:
+     - epel-release
+     - java-1.8.0
+     - https://repo.rundeck.org/latest.rpm
+   tags:
+     - rundeckInstall
+  
+ - name: Install Rundeck
+   yum:
+     name: rundeck
+     state: present
+   tags:
+     - rundeckInstall
+
+...

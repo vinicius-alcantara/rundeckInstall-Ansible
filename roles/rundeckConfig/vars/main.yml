@@ -1,0 +1,5 @@
+---
+# vars file for rundeckConfig
+
+ip_rundeck_server: 10.50.4.229
+port: 4440          #4440 is default

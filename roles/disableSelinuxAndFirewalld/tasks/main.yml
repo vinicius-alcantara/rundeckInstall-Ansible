@@ -1,0 +1,8 @@
+---
+# tasks file for disableSelinuxAndFirewalld
+
+ - name: Disable Selinux and Firewalld
+   include_tasks: disableSelinuxAndFirewalld.yml
+   tags: disableSelinuxAndFirewalld
+
+...

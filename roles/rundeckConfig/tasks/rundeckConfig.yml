@@ -1,0 +1,50 @@
+ - name: Config framework.properties - ADDRESS
+   ansible.builtin.replace:
+     path: /etc/rundeck/framework.properties
+     regexp: 'localhost'
+     replace: '{{ ip_rundeck_server }}'
+   tags:
+     - rundeckConfig
+
+ - name: Config framework.properties - PORT
+   ansible.builtin.replace:
+     path: /etc/rundeck/framework.properties
+     regexp: '4440'
+     replace: '{{ port }}'
+   tags:
+     - rundeckConfig
+
+ - name: Config rundeck-config.properties - ADDRESS
+   ansible.builtin.replace:
+     path: /etc/rundeck/rundeck-config.properties
+     regexp: 'localhost'
+     replace: '{{ ip_rundeck_server }}'
+   tags:
+     - rundeckConfig
+
+ - name: Config rundeck-config.properties - PORT
+   ansible.builtin.replace:
+     path: /etc/rundeck/rundeck-config.properties
+     regexp: '4440'
+     replace: '{{ port }}'
+   tags:
+     - rundeckConfig
+
+ - name: Config rundeck-config.properties projects storage
+   ansible.builtin.replace:
+     path: /etc/rundeck/rundeck-config.properties
+     regexp: 'rundeck.projectsStorageType=db'
+     replace: 'rundeck.projectsStorageType=filesystem'
+   tags:
+     - rundeckConfig
+
+ - name: Allow port rundeck server
+   ansible.posix.firewalld:
+     port: "{{ port }}/tcp"
+     permanent: yes
+     immediate: yes
+     state: enabled
+   notify:
+     - Start Rundeck
+   tags:
+     - rundeckConfig

@@ -1,0 +1,8 @@
+ansible_port: 22
+ansible_user: agility
+ansible_password: 4g1l1ty@ms
+ansible_become: yes
+ansible_become_method: sudo
+ansible_become_user: root
+ansible_become_password: 4g1l1ty@ms
+

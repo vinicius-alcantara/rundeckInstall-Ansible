@@ -1,0 +1,8 @@
+---
+# tasks file for rundeckConfig
+
+ - name: Configure Rundeck - File System Data Storage
+   include_tasks: rundeckConfig.yml
+   tags: rundeckConfig
+
+...

@@ -1,0 +1,17 @@
+--- 
+ 
+ - name: Disable SELinux
+   ansible.posix.selinux:
+     state: disabled
+   tags:
+     - disableSelinuxAndFirewalld
+
+ - name: Disable Firewalld
+   ansible.builtin.systemd:
+     name: firewalld
+     state: stopped
+     enabled: no
+   tags:
+     - disableSelinuxAndFirewalld
+
+...

@@ -1,0 +1,23 @@
+---
+
+ - name: UpdateOS
+   hosts: all
+   roles:
+     - updateOS
+
+ - name: Rundeck Install
+   hosts: all
+   roles:
+     - rundeckInstall
+
+ - name: Rundeck Configure
+   hosts: all
+   roles:
+     - rundeckConfig
+
+ - name: Disable Selinux and Firewalld
+   hosts: all
+   roles:
+     - disableSelinuxAndFirewalld
+
+...

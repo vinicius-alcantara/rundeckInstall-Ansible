@@ -1,0 +1,8 @@
+---
+# tasks file for updateOS
+
+ - name: Update OS
+   include_tasks: updateCentosOS.yml
+   tags: updateCentosOS
+
+...

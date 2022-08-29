@@ -1,0 +1,8 @@
+---
+# tasks file for rundeckInstall/
+
+ - name: Install Rundeck Latest
+   include_tasks: rundeckInstall.yml
+   tags: rundeckInstall
+
+...

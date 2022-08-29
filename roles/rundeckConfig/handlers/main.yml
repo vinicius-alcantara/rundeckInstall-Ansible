@@ -1,0 +1,10 @@
+---
+# handlers file for rundeckConfig
+
+ - name: Start Rundeck
+   systemd:
+     state: started
+     enabled: yes
+     name: rundeckd
+
+...
